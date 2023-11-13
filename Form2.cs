@@ -94,8 +94,9 @@ namespace _0502
 
             string check = KeyPress.Text;
             check = check.Replace("shift", "");
+            wordsForStop += " A&N";
             string[] keyWords = wordsForStop.Split(' ');
-            keyWords.Append("A&N");
+            //keyWords.Append("A&N");
             string path = "keysReport.txt";
             foreach (string word in keyWords)
             {
