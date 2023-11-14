@@ -31,7 +31,7 @@ namespace _0502
             {
                 Environment.Exit(0);
             }
-            
+
         }
 
         #region Windows Form Designer generated code
@@ -42,19 +42,11 @@ namespace _0502
         /// </summary>
         private void InitializeComponent()
         {
-            KeyPress = new Label();
             label1 = new Label();
             button1 = new Button();
             button2 = new Button();
+            KeyPress = new RichTextBox();
             SuspendLayout();
-            // 
-            // KeyPress
-            // 
-            KeyPress.BorderStyle = BorderStyle.Fixed3D;
-            KeyPress.Location = new Point(753, 63);
-            KeyPress.Name = "KeyPress";
-            KeyPress.Size = new Size(239, 468);
-            KeyPress.TabIndex = 0;
             // 
             // label1
             // 
@@ -84,15 +76,23 @@ namespace _0502
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // KeyPress
+            // 
+            KeyPress.Location = new Point(753, 75);
+            KeyPress.Name = "KeyPress";
+            KeyPress.Size = new Size(239, 453);
+            KeyPress.TabIndex = 4;
+            KeyPress.Text = "";
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1004, 540);
+            Controls.Add(KeyPress);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
-            Controls.Add(KeyPress);
             Name = "Form2";
             Text = "Відстеження";
             Load += Form2_Load;
@@ -100,10 +100,9 @@ namespace _0502
         }
 
         #endregion
-
-        private Label KeyPress;
         private Label label1;
         private Button button1;
         private Button button2;
+        private RichTextBox KeyPress;
     }
 }

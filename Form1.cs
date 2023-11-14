@@ -33,23 +33,39 @@ namespace _0502
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
-            if (checkBoxPatriot.Checked)
-            {
-                form2.patriot = true;
-            }
-            else form2.patriot = false;
+            
 
             if (radioButton1.Checked)
             {
+                Form2 form2 = new Form2();
+                if (checkBoxPatriot.Checked)
+                {
+                    form2.patriot = true;
+                }
+                else form2.patriot = false;
                 form2.Show(this);
                 ShowWindow(this.Handle, 0);
-                form2.wordsForStop = "stop";
+                //form2.wordsForStop = "stop";
+                Global.needExit = true;
             }
             else if (radioButton2.Checked)
             {
-                ShowWindow(this.Handle, 0);
-                form2.wordsForStop = textBox1.Text;
+                if (textBox1.Text.Length == 0)
+                {
+                    MessageBox.Show("Введіть хоча б одне слово для виходу з прихованого режиму", "Інфо");
+                } else
+                {
+                    Form2 form2 = new Form2();
+                    if (checkBoxPatriot.Checked)
+                    {
+                        form2.patriot = true;
+                    }
+                    else form2.patriot = false;
+                    ShowWindow(this.Handle, 0);
+                    form2.wordsForStop = textBox1.Text;
+                    Global.needExit = true;
+                }
+                
             }
 
 
